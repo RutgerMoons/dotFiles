@@ -1,0 +1,36 @@
+"line numbers
+set number
+
+"spaces as tabs
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+
+"tabs, no spaces
+set autoindent
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
+"This is for setting Makefiles with tabs not spaces
+autocmd FileType make setlocal noexpandtab
+
+"show trailing spaces
+set list listchars=tab:→\ ,trail:·
+
+"set search highlighting
+set incsearch
+set hlsearch "to turn off: set nohlsearch
+
+"Two times ESC in a row clears the search
+nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+
+"Enable modelines
+set modeline
+set modelines=25
+
+"Be able to use the mouse for resizing of splits and actions like that in VISUAL mode only
+set mouse=v
+
+"Ignore case when searching
+set ignorecase
