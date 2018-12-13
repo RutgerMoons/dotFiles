@@ -1,16 +1,28 @@
 "line numbers
 set number
 
-"spaces as tabs
+"spaces iso tabs
 "set tabstop=4
 "set shiftwidth=4
 "set expandtab
 
-"tabs, no spaces
+"tabs iso spaces
 set autoindent
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+
+" allow toggling between local and default mode
+function TabToggle()
+	if &expandtab
+		set softtabstop=0
+		set noexpandtab
+	else
+		set softtabstop=4
+		set expandtab
+	endif
+endfunction
+nmap <F9> mz:execute TabToggle()<CR>'zk
 
 "This is for setting Makefiles with tabs not spaces
 autocmd FileType make setlocal noexpandtab
@@ -34,3 +46,6 @@ set mouse=v
 
 "Ignore case when searching
 set ignorecase
+
+"Nicer color scheme
+color evening
