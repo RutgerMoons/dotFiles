@@ -1,0 +1,47 @@
+alias lshashes="ls feeds/* openwrt -1d | xargs  -I%  sh -c 'echo ====% ; cd % && git log -n1'"
+
+alias clearDNS="sudo /etc/init.d/nscd restart"
+
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+alias cd6="cd ../../../../../.."
+alias cd7="cd ../../../../../../.."
+alias cd8="cd ../../../../../../../.."
+
+alias ls="ls --color=auto"
+alias l="ls -A --color=auto"
+
+alias docker-rm-containers="docker ps -a -q | xargs docker rm"
+alias docker-rmi-none="docker images | grep '<none>' | awk '{print $3}' | xargs docker rmi"
+alias docker-clean-images="$(docker images -f 'dangling=true' -q) | xargs docker rmi"
+
+alias e="exit"
+
+# git
+alias gprp="git pull --rebase && git push"
+alias noamend="git commit --amend --no-edit"
+alias gl="git --no-pager log"
+
+alias cl="cd /usr/localdisk"
+
+#list all docker tags for certain image
+alias list_tags_repowrt="curl -k https://infra.docker.edegem.eu.thmulti.com/v2/infra/repowrt/tags/list"
+
+# list ssh keyrings
+alias ls_keyring='find "/run/user/$(id -u)/" -name "keyring-*"'
+
+# stupid typos:
+alias ks="ls"
+alias ,,=".."
+alias exot="exit"
+
+# docker tricks
+alias test-repowrt="docker run --rm -it --entrypoint bash -v /usr/localdisk/repowrt:/usr/localdisk/repowrt -v /home/users/moonsr/.gitconfig:/root/.gitconfig infra.docker.edegem.eu.thmulti.com/infra/repowrt:7"
+
+# password change for windows
+
+# not an alias, but should be run by all .xx_rc
+export EDITOR=vim
